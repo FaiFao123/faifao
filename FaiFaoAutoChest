@@ -1,0 +1,34 @@
+
+
+-----Fai Fao-----------
+-------Best Script------------
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DohmBoyOG/Script-Dump/main/ZHZH0MIYKR.lua"))()
+
+local config = {
+   ["HeaderWidth"] = 200,
+   ['PrimaryColor'] = Color3.fromRGB(166, 167, 159),
+   ['SecondaryColor'] = Color3.fromRGB(73, 103, 123),
+   ["AccentColor"] = Color3.new(0.6,0,0)
+}
+
+--- GUI Setup ---
+local gui = loadstring(game:HttpGet("https://gitlab.com/0x45.xyz/droplib/-/raw/master/drop-minified.lua"))():Init(config,game.CoreGui)
+local lpg = gui:CreateCategory("Fai Fao Hub")
+
+----MAIN------
+lpg:CreateButton("(1) Auto Lụm Rương",function() loadstring(game:HttpGet("https://raw.githubusercontent.com/NickelHUBB/SonicTuru/main/ChestFarmOp"))() end)
+
+
+function twitterCodes()
+    codes = require(game:GetService("ReplicatedStorage").Sandbox.Codes).YoutuberCodes
+    print('----------- Begin Twitter Codes -----------')
+    for code, youtuber in pairs(codes) do
+    --game:GetService("ReplicatedStorage").Remotes.CodeItem:InvokeServer({
+       -- ["Value"] = code
+    --})
+    --wait(20)
+    print('[Code]: '..code..' [Youtuber:] '..youtuber)
+   end
+   print('------------- End Twitter Codes -------------')
+end
