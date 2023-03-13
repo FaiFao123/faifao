@@ -61,12 +61,12 @@ end
 _G.Color = Color3.fromRGB(68, 202, 186)
 
 _G.Setting_table = {
-    Cày Lv= false,
-    Đánh Nhanh = true,
-	Auto_Haki = true,
-	Auto_Quan Sát = true,
-	Hiện Dame = true,
-	Xuyên Tường = true,
+    Auto_Farm = false,
+    FastAttack = true,
+	Auto_Buso = true,
+	Auto_Ken = true,
+	Show_Damage = true,
+	NoClip = true,
 	Save_Member = true,
 	Melee_A = true,
 	Defense_A = true,
