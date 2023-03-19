@@ -1,5 +1,5 @@
-if game.CoreGui:FindFirstChild("Fai Fao_Loader") then
-    game.CoreGui.Fai Fao_Loader:Destroy()
+if game.CoreGui:FindFirstChild("Skay_Loader") then
+    game.CoreGui.Skay_Loader:Destroy()
 end
 
 function AutoJoinDiscord(DiscordCode)
@@ -24,7 +24,7 @@ end
 local Client = game.Players.LocalPlayer
 local TweenService = game:GetService("TweenService")
 
-local Fai Fao_Loader = Instance.new("ScreenGui")
+local Skay_Loader = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local MainFrameCorner = Instance.new("UICorner")
 local MainFrameGlow = Instance.new("ImageLabel")
@@ -51,12 +51,12 @@ local SkipButtonCorner = Instance.new("UICorner")
 
 local SwitchFrame = Instance.new("Frame")
 
-Fai Fao_Loader.Name = "Fai Fao_Loader"
-Fai Fao_Loader.Parent = game.CoreGui
-Fai Fao_Loader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Skay_Loader.Name = "Skay_Loader"
+Skay_Loader.Parent = game.CoreGui
+Skay_Loader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 MainFrame.Name = "MainFrame"
-MainFrame.Parent = Fai Fao_Loader
+MainFrame.Parent = Skay_Loader
 MainFrame.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
 MainFrame.Position = UDim2.new(0.356198341, 0, 0.233829498, 0)
 MainFrame.Size = UDim2.new(0, 610, 0, 429)
@@ -245,7 +245,7 @@ end
 local ToggledSkip = false
 
 if getplatform() == "Mobile (phone)" then
-	loadstring(game:HttpGet("https://gitlab.com/L1ZOT/Fai Fao-hub/-/raw/main/Script/"..game.PlaceId.."/Script.lua"))()
+	loadstring(game:HttpGet("https://gitlab.com/L1ZOT/skays-hub/-/raw/main/Script/"..game.PlaceId.."/Script.lua"))()
 else
 
 SkipButton.MouseButton1Click:Connect(function()
@@ -261,8 +261,8 @@ SkipButton.MouseButton1Click:Connect(function()
 	LoadingText.Visible = false
 	repeat task.wait(.2) until LoadingLineIndicator.Size == UDim2.new(0, 375, 1, 0)
 	wait(.3)
-	game.CoreGui.Fai Fao_Loader:Destroy()
-	loadstring(game:HttpGet("https://gitlab.com/L1ZOT/Fai Fao-hub/-/raw/main/Script/"..game.PlaceId.."/Script.lua"))()
+	game.CoreGui.Skay_Loader:Destroy()
+	loadstring(game:HttpGet("https://gitlab.com/L1ZOT/skays-hub/-/raw/main/Script/"..game.PlaceId.."/Script.lua"))()
 end)
 
 DiscordButton.MouseButton1Click:Connect(function()
@@ -373,19 +373,7 @@ end)
 			wait(.9)
 			LoadingText.Text = 'Loading..'
 			wait(.7)
-			LoadingText.Text = 'Loading...'
-			wait(.9)
-			LoadingText.Text = 'Fetching Script'
-			wait(1)
-			LoadingText.Text = 'Loading Script'
-			wait(1)
-			LoadingText.Text = 'Loaded!'
-			wait(1)
-		end)
-
-		spawn(function()
-			TweenService:Create(
-				LoadingLineIndicator,
+			LoadingText.Text = 'Loading.
 				TweenInfo.new(3, Enum.EasingStyle.Quad),
 				{Size = UDim2.new(0, 70, 1, 0)}
 			):Play()
@@ -447,7 +435,7 @@ end)
 				{BackgroundTransparency = 1}
 			):Play()
 			wait(.8)
-			game.CoreGui.Fai Fao_Loader:Destroy()
+			game.CoreGui.Skay_Loader:Destroy()
 			if ToggledSkip == false then
 				loadstring(game:HttpGet("https://gitlab.com/L1ZOT/skays-hub/-/raw/main/Script/"..game.PlaceId.."/Script.lua"))()
 			end
