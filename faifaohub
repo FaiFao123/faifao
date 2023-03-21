@@ -1,5 +1,5 @@
---Made by Fai Fao Falling Team--
---Owner; YellowGreg--
+--Made by Fai Fao--
+--Owner; Fai Fao--
 --Open Source--
 
 local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
@@ -12,7 +12,7 @@ CoreGui:SetCore("SendNotification", {
 game:GetService("StarterGui"):SetCore("SendNotification",{ 	
 Title = "Made By:",  	
 Text = "Fai Fao Hub",
-	Icon = "rbxthumb://type=Asset&id=9863339777&w=150&h=150",
+	Icon = "https://zpsocial-f54-org.zadn.vn/56edc61811e2ffbca6f3.jpg",
 	Duration = 5
 })
 
@@ -283,7 +283,7 @@ e:NewButton("Anti-Lag", "No More lag", function()
     end
 end	
 end)		
-f:NewKeybind("Toggle", "Open", Enum.KeyCode.LeftControl, function()
+f:NewKeybind("Toggle", "Hiện", Enum.KeyCode.RightControl, function()
     Library:ToggleUI()
 end)
 
@@ -318,7 +318,7 @@ TextButton.MouseButton1Click:connect(function()
 Frame.Visible = false
 Frame2.Visible = true    
 local vim = game:service("VirtualInputManager")
-vim:SendKeyEvent(true, "LeftControl", false, game)
+vim:SendKeyEvent(true, "RightControl", false, game)
 end)
 
 Frame2.Parent = ScreenGui
@@ -332,14 +332,14 @@ TextButton2.Parent = Frame2
 TextButton2.BackgroundColor3 = Color3.fromRGB(255,0,0)
 TextButton2.Size = UDim2.new(0, 90, 0, 30)
 TextButton2.Font = Enum.Font.GothamBold
-TextButton2.Text = "CLOSE"
+TextButton2.Text = "Ẩn"
 TextButton2.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton2.TextSize = 22.000
 TextButton2.MouseButton1Click:connect(function()
     Frame2.Visible = false
     Frame.Visible = true
 local vim = game:service("VirtualInputManager")
-vim:SendKeyEvent(true, "LeftControl", false, game)
+vim:SendKeyEvent(true, "RightControl", false, game)
 end)
 
 
