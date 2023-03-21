@@ -1,7 +1,7 @@
 --Made by Fai Fao--
 --Owner; Fai Fao--
 --Open Source--
-
+print("Hello Ông Bà Già");
 local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
 CoreGui:SetCore("SendNotification", {
     Title = "Zombie Attack",
