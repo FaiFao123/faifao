@@ -20,15 +20,15 @@ local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = Library.CreateLib("Fai Fao | Zombie Attack | By: DauCoGhe ")
 
 
-local Tab = Window:NewTab("Main")
+local Tab = Window:NewTab("Chính")
 local a = Tab:NewSection("Main Or Combat")
-local Weapons = Window:NewTab("Mod Gun")
+local Weapons = Window:NewTab("Súng")
 local b = Weapons:NewSection("Guns are More OverPower")
-local Visual = Window:NewTab("Visual")
+local Visual = Window:NewTab("Cuối")
 local c = Visual:NewSection("See Things That nobody else can")
-local Player = Window:NewTab("Players")
+local Player = Window:NewTab("Người Chơi")
 local d = Player:NewSection("Make Yourself Overpower")
-local Misc = Window:NewTab("Misc")
+local Misc = Window:NewTab("Thập Cẩm")
 local e = Misc:NewSection("Random Useful Stuff")
 local Credit = Window:NewTab("Credits")
 local f = Credit:NewSection("Credit: Fai Fao Hub")
@@ -50,7 +50,7 @@ TextLabel.TextColor3 = Color3.new(1, 0, 0) -- color
 TextLabel.TextScaled = false -- if the text is scaled or not
 game:GetService("RunService").RenderStepped:Connect(function()
 	for i,v in pairs(game.Workspace.enemies:GetDescendants()) do
-		if v.Parent.Name == "HumanoidRootPart" and v.Parent:FindFirstChild("esp")==nil  then
+		if v.Parent.Name == "HumanoidRootPart" and v.Parent:FindFirstChild("Định Vị")==nil  then
 			TextLabel.Text = v.Parent.Parent.Name
 			BillboardGui:Clone().Parent = v.Parent
 		end
@@ -197,7 +197,7 @@ end
 end
 end)
 
-a:NewButton("AutoFarm","It Will Instantly start killing zombies",function()
+a:NewButton("Giết Zombie","It Will Instantly start killing zombies",function()
 local groundDistance = 8
 local Player = game:GetService("Players").LocalPlayer
 local function getNearest()
