@@ -256,6 +256,12 @@ mainopens.Parent = mainopen
  
  do  local ui =  game:GetService("CoreGui").RobloxGui.Modules:FindFirstChild("ZENHUB")  if ui then ui:Destroy() end end
  
+ function Update:Window(text,logo,keybind)
+ local osfunc = {}
+ local uihide = false
+ local abc = false
+ local logo = logo or 11340301587
+ local currentpage = ""
  local keybind = keybind or Enum.KeyCode.RightControl
  local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
  
@@ -322,8 +328,8 @@ mainopens.Parent = mainopen
  Hub.Position = UDim2.new(0, 110, 0, 0)
  Hub.Size = UDim2.new(0, 81, 0, 27)
  Hub.Font = Enum.Font.Code
- Hub.Text = "| CẢM ƠN ĐÃ DÙNG SCRIPT |"
- Hub.TextColor3 = Color3.fromRGB(152,0,0)
+ Hub.Text = "  | CẢM ƠN ĐÃ DÙNG SCRIPT |"
+ Hub.TextColor3 = Color3.fromRGB(153,0,0)
  Hub.TextSize = 16.000
  Hub.TextXAlignment = Enum.TextXAlignment.Left
  
@@ -579,7 +585,7 @@ wait(0.4)
 NotificationFrame.Name = "NotificationFrame"
 NotificationFrame.Parent = NotificationHold
 NotificationFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-NotificationFrame.BackgroundColor3 = Color3.fromRGB(16, 16, 16)
+NotificationFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
 NotificationFrame.BorderColor3 = _G.SectionColor
 NotificationFrame.BorderSizePixel = 0
 NotificationFrame.Transparency = 0
@@ -4491,14 +4497,14 @@ spawn(function()
                 pcall(function()
                     xShadowx.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
                     xShadowx.activeController.timeToNextAttack = 0
-                    xShadowx.activeController.hitboxMagnitude = 9999
+                    xShadowx.activeController.hitboxMagnitude = 200
                     xShadowx.activeController.active = false
                     xShadowx.activeController.timeToNextBlock = 0
                     xShadowx.activeController.focusStart = 0
                     xShadowx.activeController.increment = 4
                     xShadowx.activeController.blocking = false
                     xShadowx.activeController.attacking = false
-                    xShadowx.activeController.humanoid.AutoRotate = true
+                    xShadowx.activeController.humanoid.AutoRotate = 50
                 end)
             end
         end
@@ -5889,7 +5895,7 @@ Main:Button("Mink Fake Transform",function()
 
  end)
 Main:Button("Fishman Fake Transform",function()
- require(game:GetService("ReplicatedStorage").Notification).new("Fish V4!"):Display();
+ require(game:GetService("ReplicatedStorage").Notification).new("Fishman V4!"):Display();
  wait()
  setthreadcontext(5)
 
@@ -5913,7 +5919,7 @@ Main:Button("Fishman Fake Transform",function()
 
  end)
 Main:Button("Skypeian Fake Transform",function()
- require(game:GetService("ReplicatedStorage").Notification).new("Sky V4!"):Display();
+ require(game:GetService("ReplicatedStorage").Notification).new("Skypeian V4!"):Display();
  wait()
  setthreadcontext(5)
 
@@ -8955,7 +8961,7 @@ end)
 
 Stats:Seperator(" Auto Stats ")
 
-Stats:Toggle("Melee",_G.Auto_Stats_Melee,function(value)
+Stats:Toggle("Auto Stats Melee",_G.Auto_Stats_Melee,function(value)
  _G.Auto_Stats_Melee = value
 end)
 
@@ -8974,7 +8980,7 @@ spawn(function()
 	end
 end)
 
-Stats:Toggle("Defense",_G.Auto_Stats_Defense,function(value)
+Stats:Toggle("Auto Stats Defense",_G.Auto_Stats_Defense,function(value)
  _G.Auto_Stats_Defense = value
 end)
 
@@ -8993,7 +8999,7 @@ spawn(function()
 	end
 end)
 
-Stats:Toggle("Sword",_G.Auto_Stats_Sword,function(value)
+Stats:Toggle("Auto Stats Sword",_G.Auto_Stats_Sword,function(value)
  _G.Auto_Stats_Sword = value
 end)
 
@@ -9012,7 +9018,7 @@ spawn(function()
 	end
 end)
 
-Stats:Toggle("Gun",_G.Auto_Stats_Gun,function(value)
+Stats:Toggle("Auto Stats Gun",_G.Auto_Stats_Gun,function(value)
  _G.Auto_Stats_Gun = value
 end)
 
@@ -9030,7 +9036,7 @@ spawn(function()
 	end
 end)
 
-Stats:Toggle("Devil Fruit",_G.Auto_Stats_Devil_Fruit,function(value)
+Stats:Toggle("Auto Stats Devil Fruit",_G.Auto_Stats_Devil_Fruit,function(value)
  _G.Auto_Stats_Devil_Fruit = value
 end)
 
