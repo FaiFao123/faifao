@@ -260,7 +260,6 @@ mainopens.Parent = mainopen
  local osfunc = {}
  local uihide = false
  local abc = false
- local logo = logo or 11340301587
  local currentpage = ""
  local keybind = keybind or Enum.KeyCode.RightControl
  local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
