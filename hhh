@@ -328,7 +328,7 @@ mainopens.Parent = mainopen
  Hub.Position = UDim2.new(0, 110, 0, 0)
  Hub.Size = UDim2.new(0, 81, 0, 27)
  Hub.Font = Enum.Font.Code
- Hub.Text = "  | CẢM ƠN ĐÃ DÙNG SCRIPT |"
+ Hub.Text = "   | Cảm Ơn Đã Dùng Script |"
  Hub.TextColor3 = Color3.fromRGB(153,0,0)
  Hub.TextSize = 16.000
  Hub.TextXAlignment = Enum.TextXAlignment.Left
@@ -5894,8 +5894,8 @@ Main:Button("Mink Fake Transform",function()
   end)
 
  end)
-Main:Button("Fish Fake Transform",function()
- require(game:GetService("ReplicatedStorage").Notification).new("Fish V4!"):Display();
+Main:Button("Fishman Fake Transform",function()
+ require(game:GetService("ReplicatedStorage").Notification).new("Fishman V4!"):Display();
  wait()
  setthreadcontext(5)
 
@@ -5918,8 +5918,8 @@ Main:Button("Fish Fake Transform",function()
   end)
 
  end)
-Main:Button("Sky Fake Transform",function()
- require(game:GetService("ReplicatedStorage").Notification).new("Sky V4!"):Display();
+Main:Button("Skypeian Fake Transform",function()
+ require(game:GetService("ReplicatedStorage").Notification).new("Skypeian V4!"):Display();
  wait()
  setthreadcontext(5)
 
@@ -8961,7 +8961,7 @@ end)
 
 Stats:Seperator(" Auto Stats ")
 
-Stats:Toggle("Melee",_G.Auto_Stats_Melee,function(value)
+Stats:Toggle("Auto Stats Melee",_G.Auto_Stats_Melee,function(value)
  _G.Auto_Stats_Melee = value
 end)
 
@@ -8980,7 +8980,7 @@ spawn(function()
 	end
 end)
 
-Stats:Toggle(Defense",_G.Auto_Stats_Defense,function(value)
+Stats:Toggle("Auto Stats Defense",_G.Auto_Stats_Defense,function(value)
  _G.Auto_Stats_Defense = value
 end)
 
@@ -8999,7 +8999,7 @@ spawn(function()
 	end
 end)
 
-Stats:Toggle("Sword",_G.Auto_Stats_Sword,function(value)
+Stats:Toggle("Auto Stats Sword",_G.Auto_Stats_Sword,function(value)
  _G.Auto_Stats_Sword = value
 end)
 
@@ -9018,7 +9018,7 @@ spawn(function()
 	end
 end)
 
-Stats:Toggle("Gun",_G.Auto_Stats_Gun,function(value)
+Stats:Toggle("Auto Stats Gun",_G.Auto_Stats_Gun,function(value)
  _G.Auto_Stats_Gun = value
 end)
 
@@ -9036,7 +9036,7 @@ spawn(function()
 	end
 end)
 
-Stats:Toggle("Devil Fruit",_G.Auto_Stats_Devil_Fruit,function(value)
+Stats:Toggle("Auto Stats Devil Fruit",_G.Auto_Stats_Devil_Fruit,function(value)
  _G.Auto_Stats_Devil_Fruit = value
 end)
 
