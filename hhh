@@ -3,7 +3,6 @@ local mainopen = Instance.new("TextButton")
 local mainopens = Instance.new("UICorner")
 local loki = Instance.new("ImageLabel")
 local posto = Instance.new("UIStroke")
-
 openshit.Name = "openshit"
 openshit.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 openshit.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -5700,7 +5699,8 @@ while task.wait() do
 if _G.ChestBypass then
         local ohString1 = "SetTeam"
         local ohString2 = "Pirates"
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(ohString1, ohString2)
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(ohString1, oh
+	2)
      end
 end
 end)
@@ -9709,12 +9709,12 @@ chip = {
 	"Quake", 
 	"Light",
 	"Dark",
-	"String",
+	"Spider",
 	"Rumble",
 	"Magma",
-	"Human: Buddha",
+	"Human",
 	"Sand",
-	"Bird: Phoenix"
+	"Phoenix"
 }
 
 Dungeon:Dropdown("Select Raid",chip,function(value)
