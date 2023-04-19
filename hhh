@@ -4230,13 +4230,13 @@ local Misc = Library:Tab("Misc","rbxassetid://11447063791")
 local Op = Library:Tab("Status", "rbxassetid://7040410130")
 --------------------------------------------------------------------
 
-Setting:Label("Join My Discord For More Info!")
+Setting:Label("Click = band")
 
 Setting:Line()
 
-Setting:Button("Copy Discord Link",function()
+Setting:Button("Don't click",function()
  
- setclipboard("https://discord.gg/NnjjAUW6KX")
+ setclipboard("Da bao la ko click r ma")
  end)
 
 Setting:Seperator(" Setting ")
