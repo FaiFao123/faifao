@@ -4233,9 +4233,9 @@ Setting:Label("Join My Discord For More Info!")
 
 Setting:Line()
 
-Setting:Button("Copy Discord Link",function()
+Setting:Button("Copy Admin",function()
  
- setclipboard("https://discord.gg/NnjjAUW6KX")
+ setclipboard("Co cai Nit")
  end)
 
 Setting:Seperator(" Setting ")
@@ -4265,7 +4265,7 @@ Setting:Slider("Farm Distance",1,100,20,function(value)
  _G.DistanceMob = value
  end)
 else
- _G.DistanceMob = 20
+ _G.DistanceMob = 35
 Setting:Slider1("Farm Distance",1,100,20,function(value)
  _G.DistanceMob = value
  end)
@@ -4612,7 +4612,7 @@ Setting:Slider("Kill Health [For Mastery]",1,100,25,function(value)
  _G.Kill_At = value
 end)
 else
-_G.Kill_At = 25
+_G.Kill_At = 35
 Setting:Slider1("Kill Health [For Mastery]",1,100,25,function(value)
  _G.Kill_At = value
 end)
