@@ -9717,23 +9717,23 @@ chip = {
 	"Bird: Phoenix"
 }
 
-Dungeon:Dropdown("Select Dungeon",chip,function(value)
- _G.Select_Dungeon = value
+Dungeon:Dropdown("Select Raid",chip,function(value)
+ _G.Select_Raid = value
 end)
 
-Dungeon:Toggle("Auto Buy Chip Dungeon",_G.Auto_Buy_Chips_Dungeon,function(value)
- _G.Auto_Buy_Chips_Dungeon = value
+Dungeon:Toggle("Auto Buy Chip Raid",_G.Auto_Buy_Chips_Raid,function(value)
+ _G.Auto_Buy_Chips_Raid = value
 end)
 
 
 spawn(function()
     while wait() do
-		if _G.Auto_Buy_Chips_Dungeon then
+		if _G.Auto_Buy_Chips_Raid then
 			pcall(function()
 				local args = {
 					[1] = "RaidsNpc",
 					[2] = "Select",
-					[3] = _G.Select_Dungeon
+					[3] = _G.Select_Raid
 				}
 				
 				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
@@ -9743,7 +9743,7 @@ spawn(function()
 end)
 
 
-Dungeon:Toggle("Auto Start Dungeon",_G.Auto_StartRaid,function(value)
+Dungeon:Toggle("Auto Start Raid",_G.Auto_StartRaid,function(value)
  _G.Auto_StartRaid = value
 end)
 
