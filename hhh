@@ -28,7 +28,7 @@ mainopens.Parent = mainopen
  loki.BackgroundTransparency = 1.000
  loki.Position = UDim2.new(-0.0529999994, 0, -0.244000003, 0)
  loki.Size = UDim2.new(0, 69, 0, 62)
- loki.Image = ""
+ loki.Image = "https://zpsocial-f54-org.zadn.vn/56edc61811e2ffbca6f3.png"
  
  posto.Name = "posto"
  posto.Parent = mainopen
