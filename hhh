@@ -3,6 +3,7 @@ local mainopen = Instance.new("TextButton")
 local mainopens = Instance.new("UICorner")
 local loki = Instance.new("ImageLabel")
 local posto = Instance.new("UIStroke")
+
 openshit.Name = "openshit"
 openshit.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 openshit.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -27,7 +28,7 @@ mainopens.Parent = mainopen
  loki.BackgroundTransparency = 1.000
  loki.Position = UDim2.new(-0.0529999994, 0, -0.244000003, 0)
  loki.Size = UDim2.new(0, 69, 0, 62)
- loki.Image = "https://zpsocial-f54-org.zadn.vn/56edc61811e2ffbca6f3.png"
+ loki.Image = ""
  
  posto.Name = "posto"
  posto.Parent = mainopen
@@ -327,7 +328,7 @@ mainopens.Parent = mainopen
  Hub.Position = UDim2.new(0, 110, 0, 0)
  Hub.Size = UDim2.new(0, 81, 0, 27)
  Hub.Font = Enum.Font.Code
- Hub.Text = "   | Cảm Ơn Đã Dùng Script |"
+ Hub.Text = "| BEST BLOX FRUIT SCRIPT |"
  Hub.TextColor3 = Color3.fromRGB(153,0,0)
  Hub.TextSize = 16.000
  Hub.TextXAlignment = Enum.TextXAlignment.Left
@@ -4229,13 +4230,13 @@ local Misc = Library:Tab("Misc","rbxassetid://11447063791")
 local Op = Library:Tab("Status", "rbxassetid://7040410130")
 --------------------------------------------------------------------
 
-Setting:Label("=)")
+Setting:Label("Join My Discord For More Info!")
 
 Setting:Line()
 
-Setting:Button("Copy Admin",function()
+Setting:Button("Copy Discord Link",function()
  
- setclipboard("Co cai Nit")
+ setclipboard("https://discord.gg/NnjjAUW6KX")
  end)
 
 Setting:Seperator(" Setting ")
@@ -4612,7 +4613,7 @@ Setting:Slider("Kill Health [For Mastery]",1,100,25,function(value)
  _G.Kill_At = value
 end)
 else
-_G.Kill_At = 20
+_G.Kill_At = 25
 Setting:Slider1("Kill Health [For Mastery]",1,100,25,function(value)
  _G.Kill_At = value
 end)
@@ -5699,8 +5700,7 @@ while task.wait() do
 if _G.ChestBypass then
         local ohString1 = "SetTeam"
         local ohString2 = "Pirates"
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(ohString1, oh
-	2)
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(ohString1, ohString2)
      end
 end
 end)
@@ -9697,11 +9697,11 @@ Teleport:Seperator(" WORLD ")
 end)
 
 if World1 then
-    Dungeon:Label("Dungeon Raid Only Available At Sea 2 and 3")
+    Dungeon:Label("Raid Only Available At Sea 2 and 3")
 end
 
 if World2 or World3 then
-Dungeon:Seperator("Use in Dungeon Only!")
+Dungeon:Seperator("Use in Raid Only!")
 
 chip = {
 	"Flame", 
@@ -9709,16 +9709,16 @@ chip = {
 	"Quake", 
 	"Light",
 	"Dark",
-	"Spider",
+	"String",
 	"Rumble",
 	"Magma",
-	"Human",
+	"Human: Buddha",
 	"Sand",
-	"Phoenix"
+	"Bird: Phoenix"
 }
 
 Dungeon:Dropdown("Select Raid",chip,function(value)
- _G.Select_Raid = value
+ _G.Select_Dungeon = value
 end)
 
 Dungeon:Toggle("Auto Buy Chip Raid",_G.Auto_Buy_Chips_Raid,function(value)
