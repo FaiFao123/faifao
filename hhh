@@ -4476,7 +4476,7 @@ end)
 			end
 		end)
 
-Setting:Toggle("Fast Attack [New]",true,function(value)
+Setting:Toggle("Fast Attack",true,function(value)
  _G.FastAttack = value
 end)
 
@@ -5723,13 +5723,13 @@ Main:Toggle("Auto Farm Bone",_G.Auto_Farm_Bone,function(value)
  StopTween(_G.Auto_Farm_Bone)
  end)
 
-Main:Toggle("Auto Trade Bone",_G.Auto_Trade_Bone,function(value)
+Main:Toggle("Auto Trade Bone",_G.Auto_Random_Bone,function(value)
  _G.Auto_Trade_Bone = value
  end)
 
 spawn(function()
- while wait(.1) do
- if _G.Auto_Trade_Bone then
+ while wait(.0.1) do
+ if _G.Auto_Random_Bone then
  local args = {
   [1] = "Bones",
   [2] = "Buy",
@@ -8950,7 +8950,7 @@ end)
   
   Race:Line()
   
-  Race:Button("Teleport To Safe Zone When Pv",function()
+  Race:Button("Teleport To Safe Zone When Pvp",function()
   topos(CFrame.new(28273.0859375, 14896.5078125, 157.42063903808594))
   end)
   
@@ -9209,20 +9209,20 @@ end)
 
 Teleport:Seperator(" WORLD ")
  
- Teleport:Button("Teleport To Old World",function()
+ Teleport:Button("Teleport To Sea 1",function()
   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
   end)
  
- Teleport:Button("Teleport To Second Sea",function()
+ Teleport:Button("Teleport To Sea 2",function()
   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
  end)
 
  
- Teleport:Button("Teleport To Third Sea",function()
+ Teleport:Button("Teleport To Sea 3",function()
   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
   end)
  
- Teleport:Button("Teleport to Seabeast",function()
+ Teleport:Button("Teleport to Sea Beast",function()
   for i,v in pairs(game:GetService("Workspace").SeaBeasts:GetChildren()) do
   if v:FindFirstChild("HumanoidRootPart") then
   topos(v.HumanoidRootPart.CFrame*CFrame.new(0,100,0))
@@ -9401,7 +9401,7 @@ Teleport:Seperator(" WORLD ")
   StopTween(_G.TeleportIsland)
  end)
  
- Teleport:Button("Instant Teleport",function()
+ Teleport:Button("Bybass Teleport",function()
 		 _G.Instant = true
         if _G.Instant == true then
 	     if _G.SelectIsland == "Port Town" then 
