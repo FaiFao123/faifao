@@ -4230,13 +4230,13 @@ local Misc = Library:Tab("Misc","rbxassetid://11447063791")
 local Op = Library:Tab("Status", "rbxassetid://7040410130")
 --------------------------------------------------------------------
 
-Setting:Label("NHINCC")
+Setting:Label("?")
 
 Setting:Line()
 
-Setting:Button("=))",function()
+Setting:Button("Link Zalo",function()
  
- setclipboard("google.com")
+ setclipboard("zalo.me/ruvhsnck")
  end)
 
 Setting:Seperator(" Setting ")
