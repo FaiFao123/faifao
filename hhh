@@ -328,7 +328,7 @@ mainopens.Parent = mainopen
  Hub.Position = UDim2.new(0, 110, 0, 0)
  Hub.Size = UDim2.new(0, 81, 0, 27)
  Hub.Font = Enum.Font.Code
- Hub.Text = "    | So Ez Band |"
+ Hub.Text = "    | Phu Hoa Dong |"
  Hub.TextColor3 = Color3.fromRGB(153,0,0)
  Hub.TextSize = 16.000
  Hub.TextXAlignment = Enum.TextXAlignment.Left
@@ -4230,13 +4230,13 @@ local Misc = Library:Tab("Misc","rbxassetid://11447063791")
 local Op = Library:Tab("Status", "rbxassetid://7040410130")
 --------------------------------------------------------------------
 
-Setting:Label("Click = band")
+Setting:Label("NHINCC")
 
 Setting:Line()
 
-Setting:Button("Don't click",function()
+Setting:Button("=))",function()
  
- setclipboard("Da bao la ko click r ma")
+ setclipboard("google.com")
  end)
 
 Setting:Seperator(" Setting ")
