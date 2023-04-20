@@ -5723,13 +5723,13 @@ Main:Toggle("Auto Farm Bone",_G.Auto_Farm_Bone,function(value)
  StopTween(_G.Auto_Farm_Bone)
  end)
 
-Main:Toggle("Auto Trade Bone",_G.Auto_Random_Bone,function(value)
+Main:Toggle("Auto Trade Bone",_G.Auto_Trade_Bone,function(value)
  _G.Auto_Trade_Bone = value
  end)
 
 spawn(function()
- while wait(.0.1) do
- if _G.Auto_Random_Bone then
+ while wait(.1) do
+ if _G.Auto_Trade_Bone then
  local args = {
   [1] = "Bones",
   [2] = "Buy",
