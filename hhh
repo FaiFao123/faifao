@@ -4496,14 +4496,14 @@ spawn(function()
                 pcall(function()
                     xShadowx.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
                     xShadowx.activeController.timeToNextAttack = 0
-                    xShadowx.activeController.hitboxMagnitude = 250
+                    xShadowx.activeController.hitboxMagnitude = 9999
                     xShadowx.activeController.active = false
                     xShadowx.activeController.timeToNextBlock = 0
                     xShadowx.activeController.focusStart = 0
                     xShadowx.activeController.increment = 4
                     xShadowx.activeController.blocking = false
                     xShadowx.activeController.attacking = false
-                    xShadowx.activeController.humanoid.AutoRotate = 1000
+                    xShadowx.activeController.humanoid.AutoRotate = 500
                 end)
             end
         end
