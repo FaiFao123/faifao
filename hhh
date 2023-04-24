@@ -4500,10 +4500,10 @@ spawn(function()
                     xShadowx.activeController.active = false
                     xShadowx.activeController.timeToNextBlock = 0
                     xShadowx.activeController.focusStart = 0
-                    xShadowx.activeController.increment = 4
+                    xShadowx.activeController.increment = 1000
                     xShadowx.activeController.blocking = false
                     xShadowx.activeController.attacking = false
-                    xShadowx.activeController.humanoid.AutoRotate = 1
+                    xShadowx.activeController.humanoid.AutoRotate = 1000
                 end)
             end
         end
