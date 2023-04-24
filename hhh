@@ -3616,7 +3616,7 @@ end
                 inf.Rotation = NumberRange.new(0, 0)
                 inf.Speed = NumberRange.new(30, 30)
                 inf.SpreadAngle = Vector2.new(0,0,0,0)
-                inf.Texture = "rbxassetid://243098098"
+                inf.Texture = ""
                 inf.VelocityInheritance = 0
                 inf.ZOffset = 2
                 inf.Transparency = NumberSequence.new(0)
@@ -4503,7 +4503,7 @@ spawn(function()
                     xShadowx.activeController.increment = 4
                     xShadowx.activeController.blocking = false
                     xShadowx.activeController.attacking = false
-                    xShadowx.activeController.humanoid.AutoRotate = 50
+                    xShadowx.activeController.humanoid.AutoRotate = 100
                 end)
             end
         end
@@ -5710,7 +5710,7 @@ Main:Toggle("Auto Chest Tween",_G.Grab_Chest,function(vu)
 	_G.Grab_Chest = vu
 end)
 
-Main:Button("Instant Tp Chest (Risk)",function()
+Main:Button("Instant Tp Chest [kick]",function()
  loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/Chest_onoff"))()
  end)
 
@@ -5722,7 +5722,7 @@ Main:Toggle("Auto Farm Bone",_G.Auto_Farm_Bone,function(value)
  StopTween(_G.Auto_Farm_Bone)
  end)
 
-Main:Toggle("Auto Trade Bone",_G.Auto_Trade_Bone,function(value)
+Main:Toggle("Auto Random Bone",_G.Auto_Trade_Bone,function(value)
  _G.Auto_Trade_Bone = value
  end)
 
