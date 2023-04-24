@@ -1,36 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Codespaces
-Marketplace
-Explore
- 
-@FaiFao123 
-FaiFao123
-/
-faifao
-Public
-Cannot fork because you own this repository and are not a member of any organizations.
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Beta Try the new code view
-faifao/hhh
-@FaiFao123
-FaiFao123 Update hhh
-Latest commit 2914c04 6 minutes ago
- History
- 1 contributor
-11036 lines (10144 sloc)  474 KB
- 
-
 local openshit = Instance.new("ScreenGui")
 local mainopen = Instance.new("TextButton")
 local mainopens = Instance.new("UICorner")
@@ -11067,17 +11034,3 @@ spawn(function()
         end)
     end
 end)
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
