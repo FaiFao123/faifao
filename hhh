@@ -328,7 +328,7 @@ mainopens.Parent = mainopen
  Hub.Position = UDim2.new(0, 110, 0, 0)
  Hub.Size = UDim2.new(0, 81, 0, 27)
  Hub.Font = Enum.Font.Code
- Hub.Text = "    | Phu Hoa Dong |"
+ Hub.Text = "    |  Phu Hoa Dong |"
  Hub.TextColor3 = Color3.fromRGB(153,0,0)
  Hub.TextSize = 16.000
  Hub.TextXAlignment = Enum.TextXAlignment.Left
@@ -4230,13 +4230,13 @@ local Misc = Library:Tab("Misc","rbxassetid://11447063791")
 local Op = Library:Tab("Status", "rbxassetid://7040410130")
 --------------------------------------------------------------------
 
-Setting:Label("?")
+Setting:Label("...")
 
 Setting:Line()
 
-Setting:Button("Link Zalo",function()
+Setting:Button("...",function()
  
- setclipboard("zalo.me/ruvhsnck")
+ setclipboard("google.com")
  end)
 
 Setting:Seperator(" Setting ")
@@ -4415,7 +4415,7 @@ if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Respawn
 	game:GetService("ReplicatedStorage").Effect.Container.Respawn:Destroy()
 end
 
-Setting:Toggle("Bring Mob [Normal]",true,function(value)
+Setting:Toggle("Bring Mob",true,function(value)
  _G.BringNormal = value
 end)
 
@@ -8853,11 +8853,11 @@ Race:Seperator("Race V4")
   Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
     end)
     
-Race:Button("Teleport To Lever",function()
+Race:Button("Teleport To Lever Pull",function()
   topos(CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734))
 end)
 
-Race:Button("Teleport To Acient One",function()
+Race:Button("Teleport To Acient One (Must Be in Temple Of Time!)",function()
   topos(CFrame.new(28981.552734375, 14888.4267578125, -120.245849609375))
 end)
    
@@ -8924,37 +8924,37 @@ Race:Toggle("Disabled Inf Stairs", nil, function(value)
 end)
    Race:Line()
  
-  Race:Button("Teleport Cyborg Door",function()
+  Race:Button("Teleport Cyborg Door (Must Be in Temple Of Time!)",function()
   topos(CFrame.new(28492.4140625, 14894.4267578125, -422.1100158691406))
   end)
   
-  Race:Button("Teleport Fish Door",function()
+  Race:Button("Teleport Fish Door (Must Be in Temple Of Time!)",function()
   topos(CFrame.new(28224.056640625, 14889.4267578125, -210.5872039794922))
   end)
   
-  Race:Button("Teleport Ghoul Door",function()
+  Race:Button("Teleport Ghoul Door (Must Be in Temple Of Time!)",function()
   topos(CFrame.new(28672.720703125, 14889.1279296875, 454.5961608886719))
   end)
   
-  Race:Button("Teleport Human Door",function()
+  Race:Button("Teleport Human Door (Must Be in Temple Of Time!)",function()
   topos(CFrame.new(29237.294921875, 14889.4267578125, -206.94955444335938))
   end)
   
-  Race:Button("Teleport Mink Door",function()
+  Race:Button("Teleport Mink Door (Must Be in Temple Of Time!)",function()
   topos(CFrame.new(29020.66015625, 14889.4267578125, -379.2682800292969))
   end)
   
-  Race:Button("Teleport Sky Door",function()
+  Race:Button("Teleport Sky Door (Must Be in Temple Of Time!)",function()
   topos(CFrame.new(28967.408203125, 14918.0751953125, 234.31198120117188))
   end)
   
   Race:Line()
   
-  Race:Button("Teleport To Safe Zone When Pvp",function()
+  Race:Button("Teleport To Safe Zone When Pvp (Must Be in Temple Of Time!)",function()
   topos(CFrame.new(28273.0859375, 14896.5078125, 157.42063903808594))
   end)
   
-  Race:Button("Teleport Pvp Zone",function()
+  Race:Button("Teleport Pvp Zone (Must Be in Temple Of Time!)",function()
   topos(CFrame.new(28766.681640625, 14967.1455078125, -164.13290405273438))
   end)
   end
@@ -9222,13 +9222,7 @@ Teleport:Seperator(" WORLD ")
   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
   end)
  
- Teleport:Button("Teleport to Sea Beast",function()
-  for i,v in pairs(game:GetService("Workspace").SeaBeasts:GetChildren()) do
-  if v:FindFirstChild("HumanoidRootPart") then
-  topos(v.HumanoidRootPart.CFrame*CFrame.new(0,100,0))
-  end
-  end
- end)
+
  
  Teleport:Seperator(" Island ")
  
@@ -9401,7 +9395,7 @@ Teleport:Seperator(" WORLD ")
   StopTween(_G.TeleportIsland)
  end)
  
- Teleport:Button("Bybass Teleport",function()
+ Teleport:Button("Instant Teleport",function()
 		 _G.Instant = true
         if _G.Instant == true then
 	     if _G.SelectIsland == "Port Town" then 
@@ -9697,11 +9691,11 @@ Teleport:Seperator(" WORLD ")
 end)
 
 if World1 then
-    Dungeon:Label("Raid Only Available At Sea 2 and 3")
+    Dungeon:Label("Dungeon Raid Only Available At Sea 2 and 3")
 end
 
 if World2 or World3 then
-Dungeon:Seperator("Use in Raid Only!")
+Dungeon:Seperator("Use in Dungeon Only!")
 
 chip = {
 	"Flame", 
@@ -9717,23 +9711,23 @@ chip = {
 	"Bird: Phoenix"
 }
 
-Dungeon:Dropdown("Select Raid",chip,function(value)
+Dungeon:Dropdown("Select Dungeon",chip,function(value)
  _G.Select_Dungeon = value
 end)
 
-Dungeon:Toggle("Auto Buy Chip Raid",_G.Auto_Buy_Chips_Raid,function(value)
- _G.Auto_Buy_Chips_Raid = value
+Dungeon:Toggle("Auto Buy Chip Dungeon",_G.Auto_Buy_Chips_Dungeon,function(value)
+ _G.Auto_Buy_Chips_Dungeon = value
 end)
 
 
 spawn(function()
     while wait() do
-		if _G.Auto_Buy_Chips_Raid then
+		if _G.Auto_Buy_Chips_Dungeon then
 			pcall(function()
 				local args = {
 					[1] = "RaidsNpc",
 					[2] = "Select",
-					[3] = _G.Select_Raid
+					[3] = _G.Select_Dungeon
 				}
 				
 				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
@@ -9743,7 +9737,7 @@ spawn(function()
 end)
 
 
-Dungeon:Toggle("Auto Start Raid",_G.Auto_StartRaid,function(value)
+Dungeon:Toggle("Auto Start Dungeon",_G.Auto_StartRaid,function(value)
  _G.Auto_StartRaid = value
 end)
 
