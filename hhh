@@ -4475,7 +4475,7 @@ end)
 			end
 		end)
 
-Main:Toggle("Fast Attack 2",nil,function(value)
+Setting:Toggle("Fast Attack 2",nil,function(value)
         _G.FastAttack2 = value
     end)   
     
@@ -11010,7 +11010,7 @@ local Valkyrie_Helm = Op:Label("❌: Valkyrie Helm")
 spawn(function()
     while task.wait() do
         pcall(function()
-            for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do
+            for i,v in pairs(game:GetService("ReplicatedStorage").Reotes.CommF_:InvokeServer("getInventoryWeapons")) do
                 if v.Name == "Saber" then
                     Dark_Coat:Set("✅: Dark Coat")
                 end
