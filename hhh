@@ -6409,7 +6409,7 @@ Weapon:Toggle("Auto Soul Guitar + Hop",false,function(value)
 
 Weapon:Seperator(" Dual Curse Katana ")
 
-Weapon:Toggle("Auto CDK Quest(Not Working)",_G.AutoCdk,function(value)
+Weapon:Toggle("Auto Dual Curse Katana [SOON]",_G.AutoCdk,function(value)
  _G.AutoCdk = value
 end)
 
@@ -10524,10 +10524,7 @@ end)
 
 Misc:Seperator(" Open Menu ")
 
-Misc:Button("Inventory",function()
- game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")
-		game.Players.localPlayer.PlayerGui.Main.Inventory.Visible = true
-end)
+
 
 Misc:Button("Devil Fruit Shop",function()
  local args = {
@@ -10555,30 +10552,20 @@ Misc:Seperator(" Codes ")
     
     
 local x2Code = {
- "EXP_5B",
- "CONTROL",
- "UPDATE11",
+ "GAMER_ROBOT_1M",
  "XMASEXP",
  "1BILLION",
  "ShutDownFix2",
- "UPD14",
  "STRAWHATMAINE",
  "TantaiGaming",
- "Colosseum",
  "Axiore",
  "Sub2Daigrock",
- "Sky Island 3",
  "Sub2OfficialNoobie",
  "SUB2NOOBMASTER123",
  "THEGREATACE",
- "Fountain City",
- "BIGNEWS",
  "FUDD10",
  "SUB2GAMERROBOT_EXP1",
- "UPD15",
  "2BILLION",
- "UPD16",
- "3BVISITS",
  "fudd10_v2",
  "Starcodeheo",
  "Magicbus",
@@ -10597,7 +10584,7 @@ local x2Code = {
         end
     end)
     
-    Misc:Dropdown("Selected Codes",{"1MLIKES_RESET","THIRDSEA","SUB2GAMERROBOT_RESET1","SUB2UNCLEKIZARU"},function(value)
+    Misc:Dropdown("Selected Codes",{"1MLIKES_RESET","GAMER_ROBOT_1M","SUB2GAMERROBOT_RESET1","SUB2UNCLEKIZARU"},function(value)
         _G.CodeSelect = value
     end)
     
@@ -10824,27 +10811,13 @@ spawn(function()
 				end)
 			end
 		end)
-    Misc:Toggle("Fly",false,function(value)
-        Fly = value
-    end)
     
-    spawn(function()
-        while wait() do
-            pcall(function()
-                if Fly then
-                    fly()
-                end
-            end)
-        end
-    end)
     
         
     Misc:Button("Unlock FPS",function()
-        setfpscap(100)
+        setfpscap(360)
     end)
-Misc:Button("Invisible",function()
-        game:GetService("Players").LocalPlayer.Character.LowerTorso:Destroy()
-    end)
+
 
 
 Op:Label("Name : "..game.Players.LocalPlayer.Name)
