@@ -4475,7 +4475,7 @@ end)
 			end
 		end)
 
-Setting:Toggle("Fast Attack [PRO]",nil,function(value)
+Setting:Toggle("Fast Attack [PRO]",true,function(value)
         _G.FastAttack2 = value
     end)   
     
