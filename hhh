@@ -5666,7 +5666,7 @@ end)
 
 Main:Seperator(" Chest ")
 
-Main:Toggle("Auto Chest Fast",false,function(vu)
+Main:Toggle("Auto Chest",false,function(vu)
 	_G.ChestBypass = vu
 end)
 
@@ -5704,15 +5704,7 @@ if _G.ChestBypass then
 end
 end)
 
-Main:Toggle("Auto Chest Tween",_G.Grab_Chest,function(vu)
-	Grab_Chest = vu
-    StopTween(Grab_Chest)
-	_G.Grab_Chest = vu
-end)
 
-Main:Button("Instant Tp Chest [kick]",function()
- loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/Chest_onoff"))()
- end)
 
 if World3 then
 Main:Seperator(" Bones ")
