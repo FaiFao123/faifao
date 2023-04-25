@@ -4229,14 +4229,7 @@ local Misc = Library:Tab("Misc","rbxassetid://11447063791")
 local Op = Library:Tab("Status", "rbxassetid://7040410130")
 --------------------------------------------------------------------
 
-Setting:Label("...")
 
-Setting:Line()
-
-Setting:Button("...",function()
- 
- setclipboard("google.com")
- end)
 
 Setting:Seperator(" Setting ")
 Setting:Toggle("Auto Set Spawn Points",true,function(value)
@@ -4271,11 +4264,7 @@ Setting:Slider1("Farm Distance",1,100,20,function(value)
  end)
 end
 
-Setting:Dropdown("Select Farm Method", {
- "Behind","Below","Upper"
-},function(value)
- _G.Method = value
-end)
+
 
 spawn(function()
  while wait() do
