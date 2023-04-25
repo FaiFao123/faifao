@@ -4485,7 +4485,7 @@ spawn(function()
     end
 end)
 
-Setting:Toggle("Very Fast Attack [PCCC]",nil,function(value)
+Setting:Toggle("Very Fast Attack [PC]",nil,function(value)
     local SuperFastMode = value -- เปลี่ยนเป็นจริงถ้าคุณต้องการโจมตี Super Super Super Fast (เช่นการฆ่าทันที) แต่จะทำให้เกมเตะคุณมากกว่าโหมดปกติ
              _G.FastAttack = value
 
