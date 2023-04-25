@@ -9776,9 +9776,6 @@ end
   end)
  
  
- DevilFruit:Toggle("Auto Drop Fruit",_G.DropFruit,function(value)
-  _G.DropFruit = value
-  end)
  
  spawn(function()
   while wait() do
