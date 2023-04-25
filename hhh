@@ -4458,7 +4458,7 @@ spawn(function()
     end)
 end)
 
-Setting:Toggle("Fast Attack [2"],nil,function(value)
+Setting:Toggle("Fast Attack [2]",nil,function(value)
         _G.FastAttack2 = value
     end)   
     
