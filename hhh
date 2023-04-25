@@ -4540,9 +4540,22 @@ end
 end
 end)
 
-Setting:Toggle("Delete Effect Hit",true,function(value)
-getgenv().D = value
+Setting:Toggle("Disabled Damage Text",_G.DisableDamage,function(value)
+ _G.DisableDamage = value
 end)
+
+		spawn(function()
+			while task.wait() do
+				pcall(function()
+					if _G.DisableDamage then
+						game:GetService("ReplicatedStorage").Assets.GUI.DamageCounter.Enabled = false
+					else
+						game:GetService("ReplicatedStorage").Assets.GUI.DamageCounter.Enabled = true
+					end
+				end)
+			end
+		end)
+
 
     spawn(function()
       while wait() do
