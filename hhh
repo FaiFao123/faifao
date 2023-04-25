@@ -4577,14 +4577,6 @@ end)
     end
 end)
 
-Setting:Toggle("Auto Click",false,function(value)
- _G.click = value
-end)
-
-Setting:Toggle("Disabled Damage Text",_G.DisableDamage,function(value)
- _G.DisableDamage = value
-end)
-
 spawn(function()
  while wait() do
  if _G.WhiteScreen then
