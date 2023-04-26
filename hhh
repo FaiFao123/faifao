@@ -18,7 +18,7 @@ mainopen.Visible = true
 mainopen.MouseButton1Click:Connect(function()
 	game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
 	game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
-end
+end)
 
 mainopens.Parent = mainopen
  loki.Name = "loki"
