@@ -4837,12 +4837,12 @@ Main:Button("Stop Teleport",function()
 Main:Seperator(" Main ")
 
 Main:Dropdown("Select Mode Farm", {
- "Level Farm","Fast Mode","No Quest","Near Farm Mode"
+ "Level","Fast","No Quest","Mob Aura"
 },function(value)
  _G.Select_Mode_Farm = value
 end)
 
-Main:Toggle("Start Auto Farm",_G.Auto_Farm_Level,function(value)
+Main:Toggle("Start",_G.Auto_Farm_Level,function(value)
  _G.Auto_Farm_Level = value
  StopTween(_G.Auto_Farm_Level)
 end)
@@ -4942,56 +4942,6 @@ tableMon = {
  "Pirate Millionaire [Lv. 1500]","Dragon Crew Warrior [Lv. 1575]","Dragon Crew Archer [Lv. 1600]","Female Islander [Lv. 1625]","Giant Islander [Lv. 1650]","Marine Commodore [Lv. 1700]","Marine Rear Admiral [Lv. 1725]","Fishman Raider [Lv. 1775]","Fishman Captain [Lv. 1800]","Forest Pirate [Lv. 1825]","Mythological Pirate [Lv. 1850]","Jungle Pirate [Lv. 1900]","Musketeer Pirate [Lv. 1925]","Reborn Skeleton [Lv. 1975]","Living Zombie [Lv. 2000]","Demonic Soul [Lv. 2025]","Posessed Mummy [Lv. 2050]", "Peanut Scout [Lv. 2075]", "Peanut President [Lv. 2100]", "Ice Cream Chef [Lv. 2125]", "Ice Cream Commander [Lv. 2150]", "Cookie Crafter [Lv. 2200]", "Cake Guard [Lv. 2225]", "Baking Staff [Lv. 2250]", "Head Baker [Lv. 2275]", "Cocoa Warrior [Lv. 2300]", "Chocolate Bar Battler [Lv. 2325]", "Sweet Thief [Lv. 2350]", "Candy Rebel [Lv. 2375]", "Candy Pirate [Lv. 2400]", "Snow Demon [Lv. 2425]"
 }
 end
-
-Main:Seperator(" Other ")
-
-Main:Dropdown("Select Monster", tableMon, function(vu)
- SelectMonster = vu
- end)
-
-Main:Toggle("Farm Selected Monster",_G.AutoFarmSelectMonster,function(vu)
- _G.AutoFarmSelectMonster = vu
-end)
-
-spawn(function()
- while wait(.1) do
- if _G.AutoFarmSelectMonster then
- pcall(function()
-  checkselect(SelectMonster)
-  if game:GetService("Workspace").Enemies:FindFirstChild(SelectMonster) then
-  for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-  if v.Name == SelectMonster then
-  if v:FindFirstChild("Humanoid") then
-  if v.Humanoid.Health > 0 then
-  repeat game:GetService("RunService").Heartbeat:wait()
-  EquipWeapon(_G.Select_Weapon)
-  if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
-  local args = {
-   [1] = "Buso"
-  }
-  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-  end
-  topos(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
-  v.HumanoidRootPart.CanCollide = false
-  v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
-  game:GetService("VirtualUser"):CaptureController()
-  game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 672), game.Workspace.CurrentCamera.CFrame)
-  PosMonSelectMonster = v.HumanoidRootPart.CFrame
-  SelectMonsterMagnet = true
-  until not _G.AutoFarmSelectMonster or not v.Parent or v.Humanoid.Health == 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name)
-  end
-  end
-  end
-  end
-  else
-   checkselect(SelectMonster)
-  SelectMonsterMagnet = false
-  topos(CFrameMon)
-  end
-  end)
- end
- end
-end)
 
 Main:Seperator(" Mastery ")
  
