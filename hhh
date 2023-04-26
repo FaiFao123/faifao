@@ -4437,23 +4437,114 @@ Setting:Toggle("Bring Mob",true,function(Mag)
             end)
         end
     end)
+
+Setting:Toggle("Fast Attack 1",true,function(value)
+        _G.FastAttack2 = value
+    end)      
     
-    Setting:Toggle("Fast Attack ","9606294253",_G.Setting_table.FastAttack,function(vu)
-	_G.Setting_table.FastAttack = vu
-	Update_Setting(getgenv()['MyName'])
-end)
+    Setting:Toggle("Fast Attack 2",nil,function(value)
+        _G.FastAttack2 = value
+    end)   
+    
+    local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
+CombatFrameworkR = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+y = debug.getupvalues(CombatFrameworkR)[2]
 spawn(function()
-	while wait(.5) do
-		pcall(function()
-			if _G.Setting_table.FastAttack then
-				repeat wait(_G.Fast_Delay)
-					AttackNoCD()
-				until not _G.Setting_table.FastAttack
-			end
-		end)
-	end
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if _G.FastAttack2 then
+            if typeof(y) == "table" then
+                pcall(function()
+                    CameraShaker:Stop()
+                    y.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
+                    y.activeController.timeToNextAttack = 0
+                    y.activeController.hitboxMagnitude = 9999
+                    y.activeController.active = false
+                    y.activeController.timeToNextBlock = 0
+                    y.activeController.focusStart = 0
+                    y.activeController.increment = 4
+                    y.activeController.blocking = false
+                    y.activeController.attacking = false
+                    y.activeController.humanoid.AutoRotate = true
+                end)
+            end
+        end
+    end)
 end)
+
+spawn(function()
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if _G.FastAttack == true then
+            game.Players.LocalPlayer.Character.Stun.Value = 0
+            game.Players.LocalPlayer.Character.Humanoid.Sit = false
+            game.Players.LocalPlayer.Character.Busy.Value = false        
+        end
+    end)
+end)
+
+    Setting:Toggle("Fast Attack 3",false,function(Fast)
+    _G.FastAttack = Fast
+end)
+
+local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+local CombatFramework = debug.getupvalues(Module)[2]
+local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
+
+spawn(function()
+    while true do
+        if _G.FastAttack then
+            pcall(function()
+                CameraShakerR:Stop()
+                CombatFramework.activeController.attacking = false
+                CombatFramework.activeController.timeToNextAttack = 0
+                CombatFramework.activeController.increment = 3
+                CombatFramework.activeController.hitboxMagnitude = 100
+                CombatFramework.activeController.blocking = false
+                CombatFramework.activeController.timeToNextBlock = 0
+                CombatFramework.activeController.focusStart = 0
+                CombatFramework.activeController.humanoid.AutoRotate = true
+            end)
+        end
+        task.wait()
+    end
+end)
+
+Setting:Toggle("Fast Attack 4",false,function(value)
+        getgenv().FastAttack1 = value
+    end)
     
+coroutine.wrap(function()
+local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:Stop()
+    for v,v in pairs(getreg()) do
+        if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then
+             for v,v in pairs(debug.getupvalues(v)) do
+                if typeof(v) == "table" then
+                    spawn(function()
+                        game:GetService("RunService").RenderStepped:Connect(function()
+                            if getgenv().FastAttack1 then
+                                 pcall(function()
+                                     v.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
+                                     v.activeController.attacking = false
+                                     v.activeController.increment = 4
+                                     v.activeController.blocking = false   
+                                     v.activeController.hitboxMagnitude = 150
+    		                         v.activeController.humanoid.AutoRotate = true
+    	                      	     v.activeController.focusStart = 0
+    	                      	     v.activeController.currentAttackTrack = 0
+                                     sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRaxNerous", math.huge)
+                                 end)
+                             end
+                         end)
+                    end)
+                end
+            end
+        end
+    end
+end)();
+
+Setting:Toggle("Fast Attack 5",false,function(value)
+            _G.FastAttack = value
+        end)
+
     spawn(function()
       while wait() do
       if _G.WhiteScreen then
