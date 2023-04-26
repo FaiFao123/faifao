@@ -4842,11 +4842,34 @@ Main:Dropdown("Select Mode Farm", {
  _G.Select_Mode_Farm = value
 end)
 
-Main:Toggle("Start Auto Farm",_G.Auto_Farm_Level,function(value)
+Main:Toggle("Auto Farm",_G.Auto_Farm_Level,function(value)
  _G.Auto_Farm_Level = value
  StopTween(_G.Auto_Farm_Level)
 end)
 
+Main:Toggle("Auto Farm Bone",_G.Auto_Farm_Bone,function(value)
+ _G.Auto_Farm_Bone = value
+ StopTween(_G.Auto_Farm_Bone)
+ end)
+
+Main:Toggle("Auto Random Bone",_G.Auto_Trade_Bone,function(value)
+ _G.Auto_Trade_Bone = value
+ end)
+
+spawn(function()
+ while wait(.1) do
+ if _G.Auto_Trade_Bone then
+ local args = {
+  [1] = "Bones",
+  [2] = "Buy",
+  [3] = 1,
+  [4] = 1
+ }
+
+ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+ end
+ end
+ end)
 
 function EquipWeaponSword()
 	pcall(function()
@@ -5790,31 +5813,6 @@ end)
 
 
 if World3 then
-Main:Seperator(" Bones ")
-
-Main:Toggle("Auto Farm Bone",_G.Auto_Farm_Bone,function(value)
- _G.Auto_Farm_Bone = value
- StopTween(_G.Auto_Farm_Bone)
- end)
-
-Main:Toggle("Auto Random Bone",_G.Auto_Trade_Bone,function(value)
- _G.Auto_Trade_Bone = value
- end)
-
-spawn(function()
- while wait(.1) do
- if _G.Auto_Trade_Bone then
- local args = {
-  [1] = "Bones",
-  [2] = "Buy",
-  [3] = 1,
-  [4] = 1
- }
-
- game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
- end
- end
- end)
 
 Main:Seperator(" Fake Race V4 ")
 
