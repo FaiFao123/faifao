@@ -4530,6 +4530,22 @@ local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:S
     end
 end)();
 
+Setting:Toggle("Fast Attack [4] ","9606294253",_G.Setting_table.FastAttack,function(vu)
+	_G.Setting_table.FastAttack = vu
+	Update_Setting(getgenv()['MyName'])
+end)
+spawn(function()
+	while wait(.5) do
+		pcall(function()
+			if _G.Setting_table.FastAttack then
+				repeat wait(_G.Fast_Delay)
+					AttackNoCD()
+				until not _G.Setting_table.FastAttack
+			end
+		end)
+	end
+end)
+
 Setting:Toggle("Very Fast Attack [PC]",nil,function(value)
     local SuperFastMode = value -- เปลี่ยนเป็นจริงถ้าคุณต้องการโจมตี Super Super Super Fast (เช่นการฆ่าทันที) แต่จะทำให้เกมเตะคุณมากกว่าโหมดปกติ
              _G.FastAttack = value
