@@ -4530,7 +4530,7 @@ local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:S
     end
 end)();
 
-Setting:Toggle("Fast Attack [4] ","9606294253",_G.Setting_table.FastAttack,function(vu)
+Setting:Toggle("Fast Attack [4] ",true,function(value)
 	_G.Setting_table.FastAttack = vu
 	Update_Setting(getgenv()['MyName'])
 end)
