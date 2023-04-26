@@ -4847,30 +4847,6 @@ Main:Toggle("Auto Farm",_G.Auto_Farm_Level,function(value)
  StopTween(_G.Auto_Farm_Level)
 end)
 
-Main:Toggle("Auto Farm Bone",_G.Auto_Farm_Bone,function(value)
- _G.Auto_Farm_Bone = value
- StopTween(_G.Auto_Farm_Bone)
- end)
-
-Main:Toggle("Random Bone",_G.Auto_Trade_Bone,function(value)
- _G.Auto_Trade_Bone = value
- end)
-
-spawn(function()
- while wait(.1) do
- if _G.Auto_Trade_Bone then
- local args = {
-  [1] = "Bones",
-  [2] = "Buy",
-  [3] = 1,
-  [4] = 1
- }
-
- game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
- end
- end
- end)
-
  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
  end
  end
@@ -5815,11 +5791,34 @@ if _G.ChestBypass then
 end
 end)
 
-
-
 if World3 then
+Main:Seperator(" Bones ")
 
-Main:Seperator(" Observation ")
+Main:Toggle("Auto Farm Bone",_G.Auto_Farm_Bone,function(value)
+ _G.Auto_Farm_Bone = value
+ StopTween(_G.Auto_Farm_Bone)
+ end)
+
+Main:Toggle("Random Bone",_G.Auto_Trade_Bone,function(value)
+ _G.Auto_Trade_Bone = value
+ end)
+
+spawn(function()
+ while wait(.1) do
+ if _G.Auto_Trade_Bone then
+ local args = {
+  [1] = "Bones",
+  [2] = "Buy",
+  [3] = 1,
+  [4] = 1
+ }
+
+ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+ end
+ end
+ end)
+
+
 	
 local ObservationLevel = Main:Label("")
 
@@ -5834,10 +5833,7 @@ spawn(function()
 	end
 end)
     
-       Main:Toggle("Auto Farm Observation",_G.AutoObservation,function(value)
-        _G.AutoObservation = value
-        StopTween(_G.AutoObservation)
-    end)
+       
     
     spawn(function()
         while wait() do
@@ -5856,9 +5852,7 @@ end)
         end
     end)
     
-    Main:Toggle("Auto Farm Observation Hop",_G.AutoObservation_Hop,function(value)
-        _G.AutoObservation_Hop = value
-    end)
+    
     
     spawn(function()
         pcall(function()
@@ -5869,7 +5863,7 @@ local NotificationHolder = loadstring(game:HttpGet("https://raw.githubuserconten
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
 wait(1)
 Notification:Notify(
-   {Title = "BLCK HUB", Description = "You Have Max Observation"},
+   {Title = "Fai Fao HUB", Description = "You Have Max Observation"},
    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "option"},
    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84), Callback = function(State) print(tostring(State)) end}
 )
