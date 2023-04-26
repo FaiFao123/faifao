@@ -4471,9 +4471,10 @@ local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:S
     end
 end)();
 
-Setting:Toggle("Fast Attack [Pc]",false,function(value)
-        getgenv().FastAttack = value
-        
+Setting:Toggle("Very Fast Attack [Pc]",nil,function(value)
+    local SuperFastMode = value -- เปลี่ยนเป็นจริงถ้าคุณต้องการโจมตี Super Super Super Fast (เช่นการฆ่าทันที) แต่จะทำให้เกมเตะคุณมากกว่าโหมดปกติ
+             _G.FastAttack = value
+
 local plr = game.Players.LocalPlayer
 
 local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
@@ -4505,9 +4506,9 @@ function AttackNoCD()
         bladehit = cac
         if #bladehit > 0 then
             local u8 = debug.getupvalue(AC.attack, 5)
-            local u9 = debug.getupvalue(AC.attack, 5)
-            local u7 = debug.getupvalue(AC.attack, 5)
-            local u10 = debug.getupvalue(AC.attack, 5)
+            local u9 = debug.getupvalue(AC.attack, 6)
+            local u7 = debug.getupvalue(AC.attack, 4)
+            local u10 = debug.getupvalue(AC.attack, 7)
             local u12 = (u8 * 798405 + u7 * 727595) % u9
             local u13 = u7 * 798405
             (function()
@@ -4517,9 +4518,9 @@ function AttackNoCD()
             end)()
             u10 = u10 + 1
             debug.setupvalue(AC.attack, 5, u8)
-            debug.setupvalue(AC.attack, 5, u9)
-            debug.setupvalue(AC.attack, 5, u7)
-            debug.setupvalue(AC.attack, 5, u10)
+            debug.setupvalue(AC.attack, 6, u9)
+            debug.setupvalue(AC.attack, 4, u7)
+            debug.setupvalue(AC.attack, 7, u10)
             pcall(function()
                 for k, v in pairs(AC.animator.anims.basic) do
                     v:Play()
@@ -4542,7 +4543,42 @@ end
 while cac() do 
 	AttackNoCD()
 end
+
+    end) 
+local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
+CombatFrameworkR = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+y = debug.getupvalues(CombatFrameworkR)[2]
+spawn(function()
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if _G.FastAttack then
+            if typeof(y) == "table" then
+                pcall(function()
+                    CameraShaker:Stop()
+                    y.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
+                    y.activeController.timeToNextAttack = 0
+                    y.activeController.hitboxMagnitude = 60
+                    y.activeController.active = false
+                    y.activeController.timeToNextBlock = 0
+                    y.activeController.focusStart = 1655503339.0980349
+                    y.activeController.increment = 1
+                    y.activeController.blocking = false
+                    y.activeController.attacking = false
+                    y.activeController.humanoid.AutoRotate = true
+                end)
+            end
+        end
     end)
+end)
+
+spawn(function()
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if _G.FastAttack == true then
+            game.Players.LocalPlayer.Character.Stun.Value = 0
+            game.Players.LocalPlayer.Character.Humanoid.Sit = false
+            game.Players.LocalPlayer.Character.Busy.Value = false        
+        end
+    end)
+end)
 
 Setting:Toggle("Remove Attack Animation",true,function(value)
     getgenv().A = require(game:GetService("ReplicatedStorage").CombatFramework.RigLib).wrapAttackAnimationAsync 
