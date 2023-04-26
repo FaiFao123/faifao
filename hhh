@@ -4438,7 +4438,7 @@ Setting:Toggle("Bring Mob",true,function(Mag)
         end
     end)    
 
-Setting:Toggle("Fast Attack [Mobile]",true,function(value)
+Setting:Toggle("Fast Attack [Mobile]",false,function(value)
         getgenv().FastAttack1 = value
     end)
     
@@ -4847,6 +4847,12 @@ Main:Button("Stop Teleport",function()
   end)
 
 Main:Seperator(" Main ")
+
+Main:Dropdown("Select Mode Farm", {
+ "Level Farm","Fast Mode","No Quest","Near Farm Mode"
+},function(value)
+ _G.Select_Mode_Farm = value
+end)
 
 Main:Toggle("Start Auto Farm",_G.Auto_Farm_Level,function(value)
  _G.Auto_Farm_Level = value
