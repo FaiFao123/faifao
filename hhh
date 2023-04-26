@@ -4437,19 +4437,8 @@ Setting:Toggle("Bring Mob",true,function(Mag)
             end)
         end
     end)
-
-  _G.Setting_table = {
-    FastAttack = true,
-
-if _G.Setting_table.FastAttack_Mode == nil then
-	_G.Setting_table.FastAttack_Mode = "Fast"
-end
-MIo = {
-	"Super Fast",
-	"Fast",
-	"Smooth"
-}
-Setting:Toggle("Fast Attack ","9606294253",_G.Setting_table.FastAttack,function(vu)
+    
+    Setting:Toggle("Fast Attack ","9606294253",_G.Setting_table.FastAttack,function(vu)
 	_G.Setting_table.FastAttack = vu
 	Update_Setting(getgenv()['MyName'])
 end)
@@ -4464,19 +4453,6 @@ spawn(function()
 		end)
 	end
 end)
-Setting:Dropdown("FastAttack","Fast",MIo,function(vu)
-	_G.Setting_table.FastAttack_Mode = vu
-	Update_Setting(getgenv()['MyName'])
-	if _G.Setting_table.FastAttack_Mode == "Fast" then
-		_G.Fast_Delay = 0.1
-	elseif _G.Setting_table.FastAttack_Mode == "Smooth" then
-		_G.Fast_Delay = 0.3
-	elseif _G.Setting_table.FastAttack_Mode == "Super Fast" then
-		_G.Fast_Delay = 0
-	end
-
-
-
     
     spawn(function()
       while wait() do
