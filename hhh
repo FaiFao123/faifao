@@ -4436,13 +4436,9 @@ Setting:Toggle("Bring Mob",true,function(Mag)
                 end
             end)
         end
-    end)
-
-Setting:Toggle("Fast Attack 1",true,function(value)
-        _G.FastAttack2 = value
-    end)      
+    end)    
     
-    Setting:Toggle("Fast Attack 2",nil,function(value)
+Setting:Toggle("Fast Attack 1",true,function(value)
         _G.FastAttack2 = value
     end)   
     
@@ -4481,7 +4477,7 @@ spawn(function()
     end)
 end)
 
-    Setting:Toggle("Fast Attack 3",false,function(Fast)
+Setting:Toggle("Fast Attack 2",true,function(Fast)
     _G.FastAttack = Fast
 end)
 
@@ -4508,7 +4504,7 @@ spawn(function()
     end
 end)
 
-Setting:Toggle("Fast Attack 4",false,function(value)
+Setting:Toggle("Fast Attack 3",true,function(value)
         getgenv().FastAttack1 = value
     end)
     
@@ -4541,7 +4537,7 @@ local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:S
     end
 end)();
 
-Setting:Toggle("Fast Attack 5",false,function(value)
+Setting:Toggle("Fast Attack 4",true,function(value)
             _G.FastAttack = value
         end)
 
@@ -4592,7 +4588,7 @@ end
 end
 end)
 
-Setting:Toggle("Disabled Damage Text",_G.DisableDamage,function(value)
+Setting:Toggle("Disabled Damage Text",_G.DisableDamage,true,function(value)
  _G.DisableDamage = value
 end)
 
@@ -4633,7 +4629,7 @@ spawn(function()
  end
  end)
 
-Setting:Toggle("White Screen [ Booster FPS ]",_G.WhiteScreen,function(value)
+Setting:Toggle("White Screen",_G.WhiteScreen,function(value)
  _G.WhiteScreen = value
 
  if _G.WhiteScreen == true then
@@ -4824,12 +4820,6 @@ Main:Button("Stop Teleport",function()
   end)
 
 Main:Seperator(" Main ")
-
-Main:Dropdown("Select Mode Farm", {
- "Level Farm","Fast Mode","No Quest","Near Farm Mode"
-},function(value)
- _G.Select_Mode_Farm = value
-end)
 
 Main:Toggle("Start Auto Farm",_G.Auto_Farm_Level,function(value)
  _G.Auto_Farm_Level = value
