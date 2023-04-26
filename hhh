@@ -4945,13 +4945,9 @@ end
 
 Main:Seperator(" Other ")
 
-Main:Dropdown("Select Monster", tableMon, function(vu)
- SelectMonster = vu
- end)
 
-Main:Toggle("Farm Selected Monster",_G.AutoFarmSelectMonster,function(vu)
- _G.AutoFarmSelectMonster = vu
-end)
+
+
 
 spawn(function()
  while wait(.1) do
@@ -4995,7 +4991,7 @@ end)
 
 Main:Seperator(" Mastery ")
  
-Main:Toggle("Auto BF Mastery",_G.AutoFarmFruitMastery,function(value)
+Main:Toggle("Auto Blox Fruit Mastery",_G.AutoFarmFruitMastery,function(value)
   _G.AutoFarmFruitMastery = value
   StopTween(_G.AutoFarmFruitMastery)
   if _G.AutoFarmFruitMastery == false then
@@ -5251,10 +5247,7 @@ Main:Toggle("Auto BF Mastery",_G.AutoFarmFruitMastery,function(value)
    end)
   end)
  
- Main:Toggle("Auto Gun Mastery",_G.AutoFarmGunMastery,function(value)
-  _G.AutoFarmGunMastery = value
-  StopTween(_G.AutoFarmGunMastery)
-  end)
+ 
  
  spawn(function()
   pcall(function()
@@ -5608,10 +5601,7 @@ Main:Seperator(" Materials ")
  _G.SelectMaterial = value
 end)
 
-Main:Toggle("Farm Selected Material",_G.AutoFarmMaterial,function(t)
-			_G.AutoFarmMaterial = t
-			StopTween(_G.AutoFarmMaterial)
-end)
+
 		
 spawn(function()
 			while task.wait() do
@@ -5748,21 +5738,7 @@ spawn(function()
 			end
 end)
 
-Main:Seperator(" Mirage Island ")
 
-Main:Toggle("Auto Mirage Island",false,function(value)
- if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
-                           topos(game:GetService("Workspace").Map:FindFirstChild("MysticIsland").HumanoidRootPart.CFrame * CFrame.new(0,500,-100))
-                    else
-if _G.Mystichop then
-hop()
-end
-end
-end)
-
-Main:Toggle("Auto Mirage Island Hop",false,function(value)
- _G.Mystichop = value
-end)
 
 Main:Seperator(" Chest ")
 
@@ -5833,34 +5809,7 @@ spawn(function()
  end
  end)
 
-Main:Button("Check Bone", function()
- game.StarterGui:SetCore("SendNotification", {
-  Title = "Checking Bone",
-  Text = ("Your Bone : "..(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Check")))
- })
- wait(1)
-end)
-end
 
-Main:Seperator(" Observation ")
-	
-local ObservationLevel = Main:Label("")
-
-spawn(function()
-	while game:GetService("RunService").Heartbeat:wait() do
-		if game.Players.LocalPlayer.VisionRadius.Value == 3000 then
-			value = "Max"
-		else
-			value = math.round(game.Players.LocalPlayer.VisionRadius.value)
-		end
-		ObservationLevel:Set("Observation Haki Level : "..tostring(value))
-	end
-end)
-    
-       Main:Toggle("Auto Farm Observation",_G.AutoObservation,function(value)
-        _G.AutoObservation = value
-        StopTween(_G.AutoObservation)
-    end)
     
     spawn(function()
         while wait() do
@@ -5879,9 +5828,7 @@ end)
         end
     end)
     
-    Main:Toggle("Auto Farm Observation Hop",_G.AutoObservation_Hop,function(value)
-        _G.AutoObservation_Hop = value
-    end)
+   
     
     spawn(function()
         pcall(function()
