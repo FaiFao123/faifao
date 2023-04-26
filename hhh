@@ -4847,15 +4847,6 @@ Main:Toggle("Auto Farm",_G.Auto_Farm_Level,function(value)
  StopTween(_G.Auto_Farm_Level)
 end)
 
-Main:Toggle("Auto Farm Bone",_G.Auto_Farm_Bone,function(value)
- _G.Auto_Farm_Bone = value
- StopTween(_G.Auto_Farm_Bone)
- end)
-
-Main:Toggle("Auto Random Bone",_G.Auto_Trade_Bone,function(value)
- _G.Auto_Trade_Bone = value
- end)
-
 spawn(function()
  while wait(.1) do
  if _G.Auto_Trade_Bone then
@@ -5814,6 +5805,31 @@ end)
 
 if World3 then
 
+Main:Toggle("Auto Farm Bone",_G.Auto_Farm_Bone,function(value)
+ _G.Auto_Farm_Bone = value
+ StopTween(_G.Auto_Farm_Bone)
+ end)
+
+Main:Toggle("Random Bone",_G.Auto_Trade_Bone,function(value)
+ _G.Auto_Trade_Bone = value
+ end)
+
+spawn(function()
+ while wait(.1) do
+ if _G.Auto_Trade_Bone then
+ local args = {
+  [1] = "Bones",
+  [2] = "Buy",
+  [3] = 1,
+  [4] = 1
+ }
+
+ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+ end
+ end
+ end)
+
+
 Main:Seperator(" Fake Race V4 ")
 
 
@@ -5841,8 +5857,8 @@ Main:Button("Mink Fake Transform",function()
   end)
 
  end)
-Main:Button("Fish Fake Transform",function()
- require(game:GetService("ReplicatedStorage").Notification).new("Fish V4!"):Display();
+Main:Button("Fishman Fake Transform",function()
+ require(game:GetService("ReplicatedStorage").Notification).new("Fishman V4!"):Display();
  wait()
  setthreadcontext(5)
 
