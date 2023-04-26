@@ -4842,10 +4842,11 @@ Main:Dropdown("Select Mode Farm", {
  _G.Select_Mode_Farm = value
 end)
 
-Main:Toggle("Auto Farm",_G.Auto_Farm_Level,function(value)
+Main:Toggle("Start Auto Farm",_G.Auto_Farm_Level,function(value)
  _G.Auto_Farm_Level = value
  StopTween(_G.Auto_Farm_Level)
 end)
+
 
 function EquipWeaponSword()
 	pcall(function()
