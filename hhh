@@ -3954,7 +3954,7 @@ end)
 spawn(function()
     while wait() do
         if _G.Auto_Farm_Level then
-			if _G.Select_Mode_Farm == "Level Farm" then
+			if _G.Select_Mode_Farm == "Level" then
 				pcall(function()
 					if not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
 						StartMagnet = false
@@ -4006,7 +4006,7 @@ spawn(function()
 						end
 					end
 				end)
-			elseif _G.Select_Mode_Farm == "Fast Mode" then
+			elseif _G.Select_Mode_Farm == "Fast" then
 				pcall(function()
 					if game:GetService("Players").LocalPlayer.Data.SpawnPoint.Value == SPAWNPOINT then
 						if not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
@@ -4096,7 +4096,7 @@ spawn(function()
 						end
 					end
 				end)
-elseif _G.Select_Mode_Farm == "Near Farm Mode" then
+elseif _G.Select_Mode_Farm == "Mob Aura" then
   for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
   if v.Name and v:FindFirstChild("Humanoid") then
   if v.Humanoid.Health > 0 then
@@ -4349,7 +4349,7 @@ end)
 spawn(function()
 	while task.wait() do
 		pcall(function()
-			if _G.Auto_Farm_Level and _G.Select_Mode_Farm == "Near Farm Mode" then
+			if _G.Auto_Farm_Level and _G.Select_Mode_Farm == "Mob Aura" then
 				for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
 					if v.Name == Ms and (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 350 then
 						v.Humanoid.WalkSpeed = 0
@@ -5581,7 +5581,7 @@ end)
 
 spawn(function()
 			while task.wait() do
-				if _G.BringNormal and _G.Select_Mode_Farm == "Near Farm Mode" then
+				if _G.BringNormal and _G.Select_Mode_Farm == "Mob Aura" then
 					pcall(function()
 						for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
 							if v.Name == Mon and (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 400 then
