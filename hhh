@@ -5818,7 +5818,16 @@ spawn(function()
  end
  end)
 
+Main:Button("Check Bone", function()
+ game.StarterGui:SetCore("SendNotification", {
+  Title = "Checking Bone",
+  Text = ("Your Bone : "..(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Check")))
+ })
+ wait(1)
+end)
+end
 
+Main:Seperator(" Observation ")
 	
 local ObservationLevel = Main:Label("")
 
@@ -5833,7 +5842,10 @@ spawn(function()
 	end
 end)
     
-       
+       Main:Toggle("Auto Farm Observation",_G.AutoObservation,function(value)
+        _G.AutoObservation = value
+        StopTween(_G.AutoObservation)
+    end)
     
     spawn(function()
         while wait() do
@@ -5852,7 +5864,9 @@ end)
         end
     end)
     
-    
+    Main:Toggle("Auto Farm Observation Hop",_G.AutoObservation_Hop,function(value)
+        _G.AutoObservation_Hop = value
+    end)
     
     spawn(function()
         pcall(function()
@@ -6213,8 +6227,7 @@ Weapon:Toggle("Auto Cake Prince",_G.Auto_Cake_Prince,function(value)
 StopTween(_G.Auto_Cake_Prince)
 end)
 	
-	
-	
+
 	Weapon:Toggle("Auto Open Dough Dungeon",_G.Auto_Open_Dough_Dungeon,function(value)
  _G.Auto_Open_Dough_Dungeon = value
 StopTween(_G.Auto_Open_Dough_Dungeon)
