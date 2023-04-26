@@ -4847,11 +4847,6 @@ Main:Toggle("Auto Farm",_G.Auto_Farm_Level,function(value)
  StopTween(_G.Auto_Farm_Level)
 end)
 
- game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
- end
- end
- end)
-
 function EquipWeaponSword()
 	pcall(function()
 		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
