@@ -4945,9 +4945,13 @@ end
 
 Main:Seperator(" Other ")
 
+Main:Dropdown("Select Monster", tableMon, function(vu)
+ SelectMonster = vu
+ end)
 
-
-
+Main:Toggle("Farm Selected Monster",_G.AutoFarmSelectMonster,function(vu)
+ _G.AutoFarmSelectMonster = vu
+end)
 
 spawn(function()
  while wait(.1) do
@@ -5601,8 +5605,11 @@ Main:Seperator(" Materials ")
  _G.SelectMaterial = value
 end)
 
+Main:Toggle("Farm Selected Material",_G.AutoFarmMaterial,function(t)
+			_G.AutoFarmMaterial = t
+			StopTween(_G.AutoFarmMaterial)
+end)
 
-		
 spawn(function()
 			while task.wait() do
 				pcall(function()
